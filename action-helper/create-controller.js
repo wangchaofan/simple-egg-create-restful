@@ -32,20 +32,20 @@ export default function createModel (name) {
 
         this.ctx.validate(rules)
         await this.ctx.service.${name}.create(this.ctx.request.body)
-        this.success('created')
+        this.success()
       }
 
       async update() {
         const id = this.ctx.params.id
         const body = this.ctx.request.body
         await this.ctx.service.${name}.update(id, body)
-        this.success('updated')
+        this.success()
       }
 
       async destroy() {
         const id = this.ctx.params.id
         await this.ctx.service.${name}.destroy(id)
-        this.success('destroyed')
+        this.success()
       }
     }
 

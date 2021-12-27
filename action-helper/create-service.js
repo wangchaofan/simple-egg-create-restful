@@ -5,9 +5,9 @@ export default function createModel (name) {
   const serviceName = `${modelName}Servicce`
 
   return `
-    const BaseService = require('./base-service')
+    const Service = require('egg').Service
 
-    class ${serviceName} extends BaseService {
+    class ${serviceName} extends Service {
       async queryAll({ limit = 10, offset = 0, conditions = {} }) {
         const Op = this.ctx.app.Sequelize.Op
         const cond = {}

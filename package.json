@@ -1,18 +1,18 @@
 {
-  "name": "egg-crete-restful",
+  "name": "simple-egg-create-restful",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "scer": "./bin/index.js"
+    "simple-egg-create-restful": "./bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Wang Chaofan",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^5.0.0",
     "commander": "^8.3.0",
