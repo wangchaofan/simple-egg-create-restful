@@ -15,5 +15,5 @@ export default function createModel (name) {
 
   return ${modelName}
 }
-  `
+`
 }

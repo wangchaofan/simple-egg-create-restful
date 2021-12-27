@@ -7,6 +7,7 @@ import createModel from '../action-helper/create-model.js'
 import createService from '../action-helper/create-service.js'
 import createController from '../action-helper/create-controller.js'
 import createBaseController from '../action-helper/create-base-controller.js'
+import { toCamel } from '../util/function.js'
 
 const log = console.log
 const error = chalk.bold.red;
@@ -15,18 +16,19 @@ const success = chalk.bold.greenBright; // Orange color
 const __dirname = path.resolve();
 
 export default async function create (apiName) {
+  const camelApiName = toCamel(apiName)
   log(chalk.bold.cyan('Create ' + apiName + ' restful files'))
   const spinner = ora(`creating`).start();
 
-  const modelTemp = createModel(apiName)
+  const modelTemp = createModel(camelApiName)
   await fs.writeFile(path.resolve(__dirname, `app/model/${apiName}.js`), modelTemp)
   spinner.succeed(success('create model file success'))
 
-  const serviceTemp = createService(apiName)
+  const serviceTemp = createService(camelApiName)
   await fs.writeFile(path.resolve(__dirname, `app/service/${apiName}.js`), serviceTemp)
   spinner.succeed(success('create service file success'))
 
-  const controllerTemp = createController(apiName)
+  const controllerTemp = createController(camelApiName)
   await fs.writeFile(path.resolve(__dirname, `app/controller/${apiName}.js`), controllerTemp)
   spinner.succeed(success('create controller file success'))
 
@@ -38,7 +40,7 @@ export default async function create (apiName) {
   }
 
   log(warning('You can write next line to the router file：'))
-  log(`router.resources('${apiName}', prefix + '/${apiName}'s, controller.${apiName})`)
+  log(`router.resources('${apiName}', prefix + '/${apiName}s', controller.${apiName})`)
 
   spinner.stop()
 }

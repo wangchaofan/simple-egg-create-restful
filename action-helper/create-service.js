@@ -47,5 +47,5 @@ class ${serviceName} extends Service {
 }
 
 module.exports = ${serviceName}
-  `
+`
 }

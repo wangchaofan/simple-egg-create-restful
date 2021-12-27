@@ -49,5 +49,5 @@ class ${controllerName} extends BaseController {
 }
 
 module.exports = ${controllerName}
-  `
+`
 }

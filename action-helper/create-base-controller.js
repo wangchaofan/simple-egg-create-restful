@@ -54,5 +54,5 @@ class BaseController extends Controller {
 }
 
 module.exports = BaseController
-  `
+`
 }
