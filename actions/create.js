@@ -31,14 +31,14 @@ export default async function create (apiName) {
   spinner.succeed(success('create controller file success'))
 
   try {
-    await fs.access(path.resolve(__dirname, `app/controller/baseController.js`), constants.F_OK)
+    await fs.access(path.resolve(__dirname, `app/controller/base-controller.js`), constants.F_OK)
   } catch (err) {
-    await fs.writeFile(path.resolve(__dirname, `app/controller/baseController.js`), createBaseController())
+    await fs.writeFile(path.resolve(__dirname, `app/controller/base-controller.js`), createBaseController())
     spinner.succeed(success('create baseController file success'))
   }
 
   log(warning('You can write next line to the router file：'))
-  log(`router.resources('${apiName}', prefix + '/${apiName}', controller.${apiName})`)
+  log(`router.resources('${apiName}', prefix + '/${apiName}'s, controller.${apiName})`)
 
   spinner.stop()
 }
