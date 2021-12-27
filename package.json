@@ -1,9 +1,13 @@
 {
   "name": "simple-egg-create-restful",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangchaofan/simple-egg-create-restful"
+  },
   "bin": {
     "simple-egg-create-restful": "./bin/index.js"
   },
@@ -18,5 +22,8 @@
     "commander": "^8.3.0",
     "inquirer": "^8.2.0",
     "ora": "^6.0.1"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
   }
 }
