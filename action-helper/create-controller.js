@@ -25,8 +25,7 @@ class ${controllerName} extends BaseController {
 
   async create() {
     const rules = {
-      name: { type: 'string', required: true },
-      hospital_id: { type: 'string', required: true }
+      name: { type: 'string', required: true }
     }
 
     this.ctx.validate(rules)

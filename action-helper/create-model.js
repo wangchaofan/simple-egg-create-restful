@@ -6,7 +6,8 @@ export default function createModel (name) {
   const { STRING, INTEGER, BOOLEAN } = app.Sequelize
 
   const ${modelName} = app.model.define('${name}', {
-    id: { type: INTEGER, primaryKey: true, autoIncrement: true }
+    id: { type: INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: STRING },
   }, {
     underscored: true,
     timestamps: true,
